@@ -47,7 +47,7 @@ t：总选择次数（total pulls）
 
 探索机制（ε-greedy）：以概率 epsilon 随机选 arm；以概率 1-epsilon 选取 UCB 最大的 arm。
 
-##3. 代码改动摘要（Code Changes）
+## 3. 代码改动摘要（Code Changes）
 ###3.1 新增文件
   bandit.py
     实现一个轻量的 Bandit controller，包括：
