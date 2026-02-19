@@ -1,84 +1,128 @@
-# Q-RAG + Multi-Armed Bandit (UCB) — HotpotQA 实验记录
+# Q-RAG with Multi-Armed Bandit (UCB) on HotpotQA
 
-本仓库基于 `q-rag-iclr-2026` 的训练/评测流程，在 **HotpotQA** 任务上加入了一个 **Multi-Armed Bandit** 模块，用于在检索/上下文构造阶段做**策略选择**，并对比了加入前后的准确度（accuracy）表现。
-
----
-
-## 1. 我做了什么改动？
-
-### ✅ 新增：`bandit.py`
-新增一个轻量的 **Bandit Controller**（多臂策略选择器），实现了：
-
-- **UCB1 (Upper Confidence Bound)**：根据“探索-利用（exploration-exploitation）”原则选择 arm
-- **ε-greedy 探索**：用 `epsilon`（默认 0.01）提供少量随机探索，避免早期陷入局部最优
-- 多个 **arms（策略候选）**，每个 arm 对应一种“从候选句子/证据中保留哪些” 的规则（通过 `mask` 实现）
+本仓库基于 `q-rag-iclr-2026` 的训练与评测流程，在 **HotpotQA** 任务中引入一个轻量的 **Multi-Armed Bandit（MAB）** 组件，用于在检索后证据筛选/上下文构造阶段进行策略选择，并报告加入该组件前后的准确度指标变化。
 
 ---
 
-## 2. Bandit 负责干什么？
+## 1. 实验设置概述（Experimental Setup）
 
-在每个 episode / query 过程中，系统面对一个“候选证据池”（比如检索出来的 sentences / passages）时，Bandit 会在若干策略之间做选择：
-
-Bandit 的目标是最大化最终 reward（例如 EM/F1 对应的 episode return），从而在长期训练中偏向更有效的 evidence selection 策略。
+- **Task / Dataset**: HotpotQA
+- **Evaluation script**: `eval_retriever.py`
+- **Episode budget**: 7405（`num_samples=-1`）
+- **Max retrieves**: 3（`+envs.max_steps=3`）
+- **Seed**: 42
+- **Checkpoints**:
+  - Baseline: `runs/Feb18_23-19-21_PQN_hotpotqa/model_best.pt`
+  - +Bandit: `runs/Feb19_00-32-46_PQN_hotpotqa/model_best.pt`
 
 ---
 
-## 3. Bandit 具体选择什么？（arms 设计）
+## 2. 方法：Bandit 控制的证据筛选（Bandit-Controlled Evidence Selection）
 
-在 `bandit.py` 里定义了 4 个 arms，每个 arm 通过 `make_mask()` 生成一个 boolean mask 来筛选 evidence：
+### 2.1 组件功能定位
+新增的 Bandit 组件用于在每个 query/episode 的“候选证据集合”上，选择一种 **evidence selection / truncation 策略（arm）** 来构造最终输入上下文。其优化目标是提升下游任务回报（reward），从而间接提升 **Exact Match（EM）** 与 **F1** 等指标。
 
-- **Arm 0: keep_all**  
-  保留所有候选（不做筛选）
+### 2.2 Arms（策略集合）
+当前实现包含 4 个候选策略（arms），通过 `make_mask()` 生成 boolean mask 来筛选证据条目：
 
-- **Arm 1: random_20_percent**  
-  随机保留约 20% 的候选（强随机下采样）
+- **Arm 0 — keep_all**：保留全部候选证据
+- **Arm 1 — random_20_percent**：随机保留约 20% 候选证据
+- **Arm 2 — first256**：仅保留前 256 条候选证据（prefix truncation）
+- **Arm 3 — first1024**：仅保留前 1024 条候选证据（prefix truncation）
 
-- **Arm 2: first256**  
-  只保留前 **256** 个候选（前缀截断）
+> 注：上述 “firstK” 的有效性依赖候选证据的排序机制（例如检索分数排序或原始拼接顺序）。
 
-- **Arm 3: first1024**  
-  只保留前 **1024** 个候选（更长的前缀截断）
-  
----
+### 2.3 选择与更新规则（UCB1 + ε-greedy）
+Bandit 采用 **UCB1（Upper Confidence Bound）** 作为主选择规则，并引入 **ε-greedy** 进行小概率随机探索。
 
-## 4. Bandit 的学习方式：UCB1 + ε-greedy（不是 Q-learning）
+- 初始化：保证每个 arm 至少被选择一次，避免 `n_a=0`。
+- 主选择规则（UCB1）：
 
-### 选择规则（简化描述）
-
-- **初始化阶段**：先确保每个 arm 至少被选择一次（避免分母为 0，也为后续估计均值提供初始样本）。
-- **之后每一步**：对每个 arm 计算 UCB 分数，并选择分数最大的 arm。
-
-$$
-\mathrm{UCB}(a)=\hat{\mu}_a + \sqrt{\frac{2\ln t}{n_a}}
-$$
-
+UCB(a) = mu_hat(a) + sqrt( 2 * ln(t) / n_a )
 其中：
-- \( \hat{\mu}_a \)：arm \(a\) 的历史平均回报（mean reward）
-- \( n_a \)：arm \(a\) 被选择的次数
-- \( t \)：到当前为止的总选择次数（总步数）
 
-- **探索（exploration）**：以 \( \epsilon \) 的小概率随机选择一个 arm（\(\epsilon\)-greedy），其余 \(1-\epsilon\) 概率按 UCB 最大值选择（利用 / exploitation）。
+mu_hat(a)：arm a 的历史平均回报（mean reward）
 
+n_a：arm a 被选择次数
 
----
+t：总选择次数（total pulls）
 
-## 5. 准确度提升如何验证？（两次 HotpotQA 对比）
+探索机制（ε-greedy）：以概率 epsilon 随机选 arm；以概率 1-epsilon 选取 UCB 最大的 arm。
 
-### (A) Q-RAG baseline（Feb18 run）
-- **EM = 0.754**
-- **F1 = 0.814**
-- Mean return = 0.754 ± 0.431
+3. 代码改动摘要（Code Changes）
+3.1 新增文件
 
-### (B) Q-RAG + Bandit（Feb19 run）
-- **EM = 0.796**
-- **F1 = 0.847**
-- Mean return = 0.796 ± 0.403
+bandit.py
+实现一个轻量的 Bandit controller，包括：
 
-### 提升幅度（绝对值）
-- **EM: +0.042**（0.754 → 0.796）
-- **F1: +0.033**（0.814 → 0.847）
+UCB1 分数计算
 
-- EM 相对提升约 **+5.57%**
-- F1 相对提升约 **+4.05%**
+ε-greedy 探索
 
----
+arm 统计量维护（均值/计数）
+
+基于 mask 的证据筛选策略接口
+
+3.2 集成点（Integration Points）
+
+在检索后 / 上下文构造阶段接入 Bandit：
+
+选择 arm → 生成 mask → 筛选候选证据 → 构造最终上下文
+
+episode 结束后使用回报更新所选 arm 的统计量（incremental update）
+
+说明：以上为功能级集成描述；具体调用位置与数据流以仓库内实现为准。
+
+4. 结果：HotpotQA 准确度对比（Results）
+
+使用 eval_retriever.py 在相同评测设置下进行对比：
+
+4.1 Baseline（Q-RAG）
+
+EM = 0.754
+
+F1 = 0.814
+
+Mean return = 0.754 ± 0.431 (std)
+
+4.2 Q-RAG + Bandit（UCB）
+
+EM = 0.796
+
+F1 = 0.847
+
+Mean return = 0.796 ± 0.403 (std)
+
+4.3 增益（Absolute / Relative Gain）
+
+EM: +0.042（0.754 → 0.796），相对提升 +5.57%
+
+F1: +0.033（0.814 → 0.847），相对提升 +4.05%
+
+5. 复现实验（Reproducibility）
+
+示例评测命令（PowerShell）：
+
+python .\eval_retriever.py `
+  pretrained_path="runs/Feb18_23-19-21_PQN_hotpotqa" `
+  num_samples=-1 `
+  seed=42 `
+  +envs.max_steps=3
+
+python .\eval_retriever.py `
+  pretrained_path="runs/Feb19_00-32-46_PQN_hotpotqa" `
+  num_samples=-1 `
+  seed=42 `
+  +envs.max_steps=3
+
+6. 后续工作（Planned Work）
+
+跨数据集评测（Generalization）
+将同一 Bandit 机制扩展到其他数据集（例如 README 中提到的 Babilong / Musique 等），在一致的评测协议下报告指标变化。
+
+单一策略消融（Ablation: Arm 3 only）
+进行仅启用 Arm 3（first1024） 的对照实验，以区分以下两类贡献来源：
+
+“Bandit 自适应选择”带来的收益
+
+“固定 first1024 截断策略”本身带来的收益
