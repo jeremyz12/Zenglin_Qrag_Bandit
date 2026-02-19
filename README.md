@@ -31,21 +31,19 @@
 - **Arm 3 — first1024**：仅保留前 1024 条候选证据（prefix truncation）
 
 ### 2.3 选择与更新规则（UCB1 + ε-greedy）
-Bandit 采用 **UCB1（Upper Confidence Bound）** 作为主选择规则，并引入 **ε-greedy** 进行小概率随机探索。
 
-- 初始化：保证每个 arm 至少被选择一次，避免 `n_a=0`。
-- 主选择规则（UCB1）：
+Bandit 使用 **UCB1 (Upper Confidence Bound)** 作为主选择规则，并结合 **ε-greedy** 进行小概率随机探索。
 
-UCB(a) = mu_hat(a) + sqrt( 2 * ln(t) / n_a )
+- 初始化：保证每个 arm 至少被选择一次，避免 `n_a = 0`。
+- UCB1：选择使 `UCB(a)` 最大的 arm，其中  
+  `UCB(a) = μ̂_a + √( (2 ln t) / n_a )`
+
 其中：
+- `μ̂_a`：arm `a` 的历史平均回报
+- `n_a`：arm `a` 被选择次数
+- `t`：总选择次数（total pulls）
 
-mu_hat(a)：arm a 的历史平均回报（mean reward）
-
-n_a：arm a 被选择次数
-
-t：总选择次数（total pulls）
-
-探索机制（ε-greedy）：以概率 epsilon 随机选 arm；以概率 1-epsilon 选取 UCB 最大的 arm。
+- ε-greedy：以概率 `epsilon` 随机选 arm；否则（`1 - epsilon`）按 UCB 最大值选择。
 
 ---
 
@@ -71,14 +69,14 @@ t：总选择次数（total pulls）
 使用 eval_retriever.py 在相同评测设置下进行对比：
 
 ### 4.1 Baseline（Q-RAG）
-  EM = 0.754
-  F1 = 0.814
-  Mean return = 0.754 ± 0.431 (std)
+EM = 0.754
+F1 = 0.814
+Mean return = 0.754 ± 0.431 (std)
 
 ### 4.2 Q-RAG + Bandit（UCB）
-  EM = 0.796
-  F1 = 0.847
-  Mean return = 0.796 ± 0.403 (std)
+EM = 0.796
+F1 = 0.847
+Mean return = 0.796 ± 0.403 (std)
 
 ### 4.3 增益（Absolute / Relative Gain）
 
