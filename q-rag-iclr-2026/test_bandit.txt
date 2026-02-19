@@ -1,0 +1,342 @@
+PS D:\ZZL_MPHIL\25302_Q_RAG_Long_Context_Multi_Supplementary Material\q-rag-iclr-2026> python train_q_rag.py envs=hotpotqa envs.max_steps=3 batch_size=32 accumulate_grads=1 envs_parallel=4 eval_episodes=5
+add repository dir: D:\ZZL_MPHIL\25302_Q_RAG_Long_Context_Multi_Supplementary Material
+[INFO] Training config saved to runs/Feb19_00-32-46_PQN_hotpotqa\config.yaml
+Embedder model: facebook/contriever
+HotPotQA load: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 90447/90447 [00:00<00:00, 6063877.08it/s]
+HotPotQA load: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7405/7405 [00:00<00:00, 6076857.98it/s]
+Training:   0%|                                                                                                                                                                 | 0/50000 [00:00<?, ?it/s] 
+[bandit] counts: [2 4 3 3] values: [0.5 0.  0.  0. ]
+Training:   1%|▌                                                                                             | 300/50000 [03:11<8:18:15,  1.66it/s, reward=0.0833, eval_reward=0.2, qf_loss=0.058, step=4]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 320  363 2932  331] values: [0.0938 0.0799 0.4393 0.0997]
+Training:   1%|█                                                                                           | 600/50000 [06:28<9:26:26,  1.45it/s, reward=0.351, eval_reward=0.6, qf_loss=0.224, step=1204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 372  396 7215  384] values: [0.1855 0.0808 0.583  0.1927]
+Training:   2%|█▋                                                                                         | 900/50000 [09:44<8:23:27,  1.63it/s, reward=0.679, eval_reward=0.4, qf_loss=0.0984, step=2404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [  438   426 11618   446] values: [0.2831 0.0962 0.648  0.2713]
+Training:   2%|██▏                                                                                          | 1200/50000 [12:59<9:00:15,  1.51it/s, reward=0.753, eval_reward=0.6, qf_loss=0.1, step=3604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [  499   457 16043   503] values: [0.3347 0.1116 0.6806 0.3201]
+Training:   3%|██▋                                                                                       | 1500/50000 [16:14<7:59:38,  1.69it/s, reward=0.762, eval_reward=0.4, qf_loss=0.0765, step=4804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [  562   480 20515   550] values: [0.3879 0.125  0.7034 0.36  ]
+Training:   4%|███▎                                                                                       | 1800/50000 [19:30<8:58:07,  1.49it/s, reward=0.784, eval_reward=0.4, qf_loss=0.106, step=6004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [  611   497 24988   634] values: [0.4255 0.1288 0.7192 0.4306]
+Training:   4%|███▉                                                                                         | 2100/50000 [22:50<9:20:34,  1.42it/s, reward=0.792, eval_reward=1, qf_loss=0.091, step=7204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [  669   518 29507   696] values: [0.4589 0.1351 0.7326 0.467 ]
+Training:   5%|████▍                                                                                        | 2400/50000 [26:05<8:03:06,  1.64it/s, reward=0.805, eval_reward=1, qf_loss=0.092, step=8404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [  733   538 34027   745] values: [0.4939 0.1338 0.7426 0.4899]
+Training:   5%|████▊                                                                                     | 2700/50000 [29:19<8:50:04,  1.49it/s, reward=0.806, eval_reward=0.6, qf_loss=0.0904, step=9604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [  783   552 38543   810] values: [0.5096 0.1413 0.7513 0.521 ]
+Training:   6%|█████▎                                                                                   | 3000/50000 [32:32<7:56:21,  1.64it/s, reward=0.816, eval_reward=0.8, qf_loss=0.0942, step=10804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [  846   569 43044   869] values: [0.526  0.1424 0.7584 0.5397]
+Training:   7%|██████                                                                                      | 3300/50000 [35:47<8:51:05,  1.47it/s, reward=0.815, eval_reward=1, qf_loss=0.142, step=12004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [  909   597 47535   932] values: [0.5457 0.1491 0.7638 0.5526]
+Training:   7%|██████▍                                                                                   | 3600/50000 [39:03<8:30:25,  1.52it/s, reward=0.811, eval_reward=0.4, qf_loss=0.048, step=13204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [  968   622 52076   992] values: [0.5651 0.1527 0.7695 0.5645]
+Training:   8%|███████                                                                                    | 3900/50000 [42:18<8:06:02,  1.58it/s, reward=0.826, eval_reward=1, qf_loss=0.0954, step=14404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 1034   652 56601  1049] values: [0.5812 0.1595 0.7743 0.5739]
+Training:   8%|███████▋                                                                                   | 4200/50000 [45:31<7:50:34,  1.62it/s, reward=0.825, eval_reward=1, qf_loss=0.0685, step=15604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 1090   676 61136  1100] values: [0.5945 0.1642 0.778  0.5791]
+Training:   9%|████████                                                                                  | 4500/50000 [48:44<8:08:16,  1.55it/s, reward=0.82, eval_reward=0.6, qf_loss=0.0951, step=16804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 1154   700 65656  1162] values: [0.6066 0.1629 0.7808 0.5955]
+Training:  10%|████████▋                                                                                 | 4800/50000 [51:56<7:22:17,  1.70it/s, reward=0.817, eval_reward=0.8, qf_loss=0.127, step=18004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 1825   729 69595  1219] values: [0.6959 0.1701 0.7836 0.6071]
+Training:  10%|█████████                                                                                | 5100/50000 [55:10<7:37:08,  1.64it/s, reward=0.829, eval_reward=0.4, qf_loss=0.0654, step=19204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 6388   754 69646  1277] values: [0.7891 0.179  0.7836 0.6194]
+Training:  11%|█████████▋                                                                                | 5400/50000 [58:23<7:59:05,  1.55it/s, reward=0.825, eval_reward=0.4, qf_loss=0.103, step=20404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [10969   782 69708  1322] values: [0.8115 0.1867 0.7837 0.6271]
+Training:  11%|██████████                                                                              | 5700/50000 [1:01:38<7:55:00,  1.55it/s, reward=0.84, eval_reward=0.8, qf_loss=0.0582, step=21604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [15527   803 69767  1375] values: [0.8174 0.188  0.7838 0.6378]
+Training:  12%|██████████▍                                                                            | 6000/50000 [1:04:50<8:03:10,  1.52it/s, reward=0.831, eval_reward=0.8, qf_loss=0.0657, step=22804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [20111   827 69834  1433] values: [0.8223 0.1935 0.7837 0.6448]
+Training:  13%|██████████▉                                                                            | 6300/50000 [1:08:04<7:30:21,  1.62it/s, reward=0.834, eval_reward=0.8, qf_loss=0.0929, step=24004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [24694   852 69888  1503] values: [0.8252 0.196  0.7838 0.6534]
+Training:  13%|███████████▍                                                                           | 6600/50000 [1:11:19<7:51:46,  1.53it/s, reward=0.835, eval_reward=0.8, qf_loss=0.0666, step=25204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [29271   869 69963  1566] values: [0.8281 0.1956 0.7839 0.6609]
+Training:  14%|████████████▏                                                                           | 6900/50000 [1:14:34<7:14:35,  1.65it/s, reward=0.842, eval_reward=0.8, qf_loss=0.126, step=26404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [33877   890 70013  1627] values: [0.8316 0.2011 0.7838 0.6687]
+Training:  14%|████████████▋                                                                           | 7200/50000 [1:17:47<7:40:53,  1.55it/s, reward=0.85, eval_reward=0.8, qf_loss=0.0339, step=27604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [38454   920 70079  1688] values: [0.8341 0.2109 0.7838 0.6748]
+Training:  15%|█████████████▎                                                                           | 7500/50000 [1:21:01<7:29:36,  1.58it/s, reward=0.85, eval_reward=0.8, qf_loss=0.134, step=28804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [43050   951 70144  1744] values: [0.8364 0.2114 0.7839 0.6812]
+Training:  16%|██████████████▏                                                                            | 7800/50000 [1:24:17<7:52:50,  1.49it/s, reward=0.852, eval_reward=1, qf_loss=0.111, step=3e+4]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [47655   980 70209  1802] values: [0.8377 0.2194 0.7839 0.6865]
+Training:  16%|██████████████                                                                         | 8100/50000 [1:27:34<7:06:51,  1.64it/s, reward=0.847, eval_reward=0.6, qf_loss=0.0859, step=31204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [52288  1000 70273  1860] values: [0.8395 0.221  0.784  0.6909]
+Training:  17%|██████████████▊                                                                         | 8400/50000 [1:30:46<7:51:11,  1.47it/s, reward=0.857, eval_reward=0.8, qf_loss=0.066, step=32404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [56892  1021 70332  1919] values: [0.841  0.2262 0.7841 0.6941]
+Training:  17%|███████████████▍                                                                         | 8700/50000 [1:33:59<6:51:14,  1.67it/s, reward=0.855, eval_reward=1, qf_loss=0.0407, step=33604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [61553  1030 70375  1965] values: [0.8424 0.2291 0.784  0.6987]
+Training:  18%|████████████████▍                                                                          | 9000/50000 [1:37:13<7:37:28,  1.49it/s, reward=0.859, eval_reward=1, qf_loss=0.12, step=34804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [66089  1067 70437  2031] values: [0.8433 0.2287 0.7841 0.7031]
+Training:  19%|████████████████▋                                                                         | 9300/50000 [1:40:28<6:55:38,  1.63it/s, reward=0.849, eval_reward=1, qf_loss=0.052, step=36004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [70706  1089 70490  2094] values: [0.8439 0.2314 0.7842 0.7077]
+Training:  19%|████████████████▋                                                                      | 9600/50000 [1:43:41<7:19:07,  1.53it/s, reward=0.851, eval_reward=0.8, qf_loss=0.0858, step=37204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [75342  1116 70546  2154] values: [0.8446 0.2375 0.7842 0.7131]
+Training:  20%|█████████████████▏                                                                     | 9900/50000 [1:46:57<7:15:33,  1.53it/s, reward=0.854, eval_reward=0.8, qf_loss=0.0321, step=38404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [79934  1138 70609  2216] values: [0.8455 0.2417 0.7843 0.7157]
+Training:  20%|█████████████████▉                                                                      | 10200/50000 [1:50:14<6:50:41,  1.62it/s, reward=0.858, eval_reward=1, qf_loss=0.0916, step=39604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [84538  1163 70689  2269] values: [0.8466 0.2433 0.7844 0.7193]
+Training:  21%|██████████████████▍                                                                     | 10500/50000 [1:53:31<7:28:27,  1.47it/s, reward=0.863, eval_reward=1, qf_loss=0.0265, step=40804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [89151  1188 70739  2340] values: [0.8473 0.2449 0.7844 0.7231]
+Training:  22%|██████████████████▌                                                                   | 10800/50000 [1:56:42<6:34:47,  1.65it/s, reward=0.856, eval_reward=0.8, qf_loss=0.0473, step=42004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [93791  1209 70801  2411] values: [0.8483 0.244  0.7845 0.7287]
+Training:  22%|███████████████████▎                                                                   | 11100/50000 [1:59:54<7:25:02,  1.46it/s, reward=0.866, eval_reward=0.8, qf_loss=0.033, step=43204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [95617  1236 70867  5251] values: [0.8484 0.2476 0.7845 0.801 ]
+Training:  23%|███████████████████▌                                                                  | 11400/50000 [2:03:10<6:19:21,  1.70it/s, reward=0.856, eval_reward=0.6, qf_loss=0.0771, step=44404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [95670  1257 70923  9887] values: [0.8484 0.2546 0.7846 0.8292]
+Training:  23%|████████████████████▊                                                                    | 11700/50000 [2:06:24<6:32:35,  1.63it/s, reward=0.86, eval_reward=1, qf_loss=0.0607, step=45604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [95722  1288 70985 14513] values: [0.8484 0.2585 0.7847 0.841 ]
+Training:  24%|████████████████████▋                                                                 | 12000/50000 [2:09:39<6:24:59,  1.65it/s, reward=0.864, eval_reward=0.8, qf_loss=0.0255, step=46804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [95772  1312 71042 19145] values: [0.8484 0.2607 0.7848 0.8477]
+Training:  25%|█████████████████████▏                                                                | 12300/50000 [2:12:53<6:09:12,  1.70it/s, reward=0.867, eval_reward=0.8, qf_loss=0.0771, step=48004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [95837  1329 71098 23786] values: [0.8484 0.2619 0.7849 0.8512]
+Training:  25%|█████████████████████▋                                                                | 12600/50000 [2:16:08<7:10:10,  1.45it/s, reward=0.864, eval_reward=0.8, qf_loss=0.0295, step=49204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [95901  1356 71164 28418] values: [0.8484 0.2618 0.7849 0.856 ]
+Training:  26%|██████████████████████▋                                                                 | 12900/50000 [2:19:23<6:11:18,  1.67it/s, reward=0.877, eval_reward=1, qf_loss=0.0686, step=50404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [95953  1371 71234 33057] values: [0.8485 0.2619 0.785  0.8579]
+Training:  26%|███████████████████████▏                                                                | 13200/50000 [2:22:37<6:39:08,  1.54it/s, reward=0.868, eval_reward=1, qf_loss=0.0396, step=51604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [96008  1398 71302 37708] values: [0.8485 0.2647 0.7851 0.8608]
+Training:  27%|███████████████████████▊                                                                | 13500/50000 [2:25:50<6:39:41,  1.52it/s, reward=0.878, eval_reward=1, qf_loss=0.0443, step=52804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [96068  1417 71349 42364] values: [0.8485 0.2632 0.7852 0.8621]
+Training:  28%|████████████████████████▌                                                                | 13800/50000 [2:29:05<5:58:15,  1.68it/s, reward=0.869, eval_reward=1, qf_loss=0.087, step=54004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [96135  1439 71402 47029] values: [0.8485 0.2655 0.7852 0.8637]
+Training:  28%|████████████████████████▎                                                             | 14100/50000 [2:32:21<6:27:39,  1.54it/s, reward=0.876, eval_reward=0.8, qf_loss=0.0352, step=55204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [96191  1467 71475 51682] values: [0.8486 0.2645 0.7853 0.8648]
+Training:  29%|████████████████████████▊                                                             | 14400/50000 [2:35:36<6:02:16,  1.64it/s, reward=0.873, eval_reward=0.6, qf_loss=0.0671, step=56404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [96266  1480 71528 56352] values: [0.8486 0.2655 0.7853 0.8663]
+Training:  29%|██████████████████████████▏                                                              | 14700/50000 [2:38:51<6:15:31,  1.57it/s, reward=0.88, eval_reward=1, qf_loss=0.0378, step=57604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [96326  1496 71590 61018] values: [0.8486 0.2667 0.7854 0.8672]
+Training:  30%|█████████████████████████▊                                                            | 15000/50000 [2:42:06<6:14:19,  1.56it/s, reward=0.876, eval_reward=0.8, qf_loss=0.0576, step=58804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [96385  1522 71647 65690] values: [0.8486 0.2707 0.7855 0.8678]
+Training:  31%|███████████████████████████▏                                                             | 15300/50000 [2:45:19<5:47:59,  1.66it/s, reward=0.874, eval_reward=1, qf_loss=0.0352, step=6e+4]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [96438  1540 71712 70386] values: [0.8487 0.2721 0.7856 0.8688]
+Training:  31%|██████████████████████████▊                                                           | 15600/50000 [2:48:32<6:14:38,  1.53it/s, reward=0.881, eval_reward=0.6, qf_loss=0.0874, step=61204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [96506  1563 71778 75060] values: [0.8487 0.2726 0.7857 0.8701]
+Training:  32%|███████████████████████████▎                                                          | 15900/50000 [2:51:47<5:55:37,  1.60it/s, reward=0.887, eval_reward=0.8, qf_loss=0.0419, step=62404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [96573  1584 71843 79728] values: [0.8487 0.274  0.7858 0.8709]
+Training:  32%|████████████████████████████▌                                                           | 16200/50000 [2:55:01<6:14:05,  1.51it/s, reward=0.881, eval_reward=1, qf_loss=0.0753, step=63604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [96641  1599 71904 84412] values: [0.8487 0.277  0.7858 0.8716]
+Training:  33%|████████████████████████████▍                                                         | 16500/50000 [2:58:13<6:04:33,  1.53it/s, reward=0.882, eval_reward=0.8, qf_loss=0.0294, step=64804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [96713  1617 71960 89096] values: [0.8488 0.2777 0.7858 0.8726]
+Training:  34%|████████████████████████████▉                                                         | 16800/50000 [3:01:28<5:43:37,  1.61it/s, reward=0.888, eval_reward=0.6, qf_loss=0.0812, step=66004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [96762  1636 72019 93783] values: [0.8488 0.2763 0.7859 0.8735]
+Training:  34%|██████████████████████████████                                                          | 17100/50000 [3:04:44<6:08:01,  1.49it/s, reward=0.887, eval_reward=1, qf_loss=0.0247, step=67204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [96821  1657 72085 98460] values: [0.8488 0.2776 0.7859 0.8742]
+Training:  35%|██████████████████████████████▌                                                         | 17400/50000 [3:07:57<5:34:34,  1.62it/s, reward=0.883, eval_reward=1, qf_loss=0.0561, step=68404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 96891   1674  72145 103162] values: [0.8488 0.2784 0.786  0.8749]
+Training:  35%|██████████████████████████████▊                                                        | 17700/50000 [3:11:10<6:17:40,  1.43it/s, reward=0.889, eval_reward=0.8, qf_loss=0.098, step=69604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 96966   1692  72207 107847] values: [0.8488 0.279  0.7861 0.8758]
+Training:  36%|███████████████████████████████▎                                                       | 18000/50000 [3:14:26<5:48:36,  1.53it/s, reward=0.892, eval_reward=1, qf_loss=0.00904, step=70804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 97020   1718  72280 112516] values: [0.8488 0.2806 0.7862 0.8763]
+Training:  37%|███████████████████████████████▍                                                      | 18300/50000 [3:17:43<5:33:29,  1.58it/s, reward=0.886, eval_reward=0.6, qf_loss=0.0828, step=72004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 97071   1739  72335 117218] values: [0.8488 0.2841 0.7862 0.8771]
+Training:  37%|████████████████████████████████▋                                                       | 18600/50000 [3:20:56<5:58:41,  1.46it/s, reward=0.893, eval_reward=1, qf_loss=0.0198, step=73204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 97148   1759  72388 121908] values: [0.8488 0.2848 0.7863 0.8775]
+Training:  38%|█████████████████████████████████▎                                                      | 18900/50000 [3:24:09<5:18:37,  1.63it/s, reward=0.887, eval_reward=1, qf_loss=0.0407, step=74404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 97195   1780  72443 126618] values: [0.8489 0.2843 0.7864 0.8783]
+Training:  38%|█████████████████████████████████▊                                                      | 19200/50000 [3:27:24<5:56:42,  1.44it/s, reward=0.895, eval_reward=1, qf_loss=0.0286, step=75604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 97265   1803  72511 131287] values: [0.8488 0.2856 0.7865 0.8787]
+Training:  39%|█████████████████████████████████▉                                                     | 19500/50000 [3:30:40<5:14:18,  1.62it/s, reward=0.887, eval_reward=0.6, qf_loss=0.109, step=76804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 97321   1817  72585 135993] values: [0.8489 0.2867 0.7866 0.8794]
+Training:  40%|██████████████████████████████████                                                    | 19800/50000 [3:33:52<5:41:11,  1.48it/s, reward=0.898, eval_reward=0.8, qf_loss=0.0503, step=78004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 97375   1833  72641 140715] values: [0.8489 0.287  0.7867 0.8802]
+Training:  40%|████████████████████████████████████▏                                                     | 20100/50000 [3:37:05<5:17:46,  1.57it/s, reward=0.9, eval_reward=1, qf_loss=0.0328, step=79204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 97435   1867  72693 145425] values: [0.849  0.2855 0.7868 0.8808]
+Training:  41%|███████████████████████████████████▉                                                    | 20400/50000 [3:40:21<5:05:02,  1.62it/s, reward=0.893, eval_reward=1, qf_loss=0.0835, step=80404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 97501   1886  72756 150125] values: [0.849  0.2863 0.7868 0.8813]
+Training:  41%|████████████████████████████████████▍                                                   | 20700/50000 [3:43:38<5:40:12,  1.44it/s, reward=0.896, eval_reward=1, qf_loss=0.0729, step=81604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 97575   1912  72811 154838] values: [0.849  0.2871 0.7869 0.882 ]
+Training:  42%|████████████████████████████████████                                                  | 21000/50000 [3:46:52<4:45:23,  1.69it/s, reward=0.898, eval_reward=0.8, qf_loss=0.0257, step=82804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 97639   1934  72875 159563] values: [0.8491 0.288  0.787  0.8825]
+Training:  43%|█████████████████████████████████████▉                                                   | 21300/50000 [3:50:07<5:38:05,  1.41it/s, reward=0.896, eval_reward=1, qf_loss=0.078, step=84004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 97701   1950  72935 164297] values: [0.8491 0.2882 0.7871 0.8833]
+Training:  43%|██████████████████████████████████████                                                  | 21600/50000 [3:53:21<5:11:19,  1.52it/s, reward=0.91, eval_reward=0.6, qf_loss=0.062, step=85204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 97770   1967  73001 169002] values: [0.8492 0.2883 0.7872 0.8839]
+Training:  44%|█████████████████████████████████████▋                                                | 21900/50000 [3:56:34<4:55:24,  1.59it/s, reward=0.904, eval_reward=0.8, qf_loss=0.0338, step=86404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 97819   1989  73056 173723] values: [0.8492 0.2886 0.7873 0.8844]
+Training:  44%|███████████████████████████████████████                                                 | 22200/50000 [3:59:50<4:56:24,  1.56it/s, reward=0.899, eval_reward=1, qf_loss=0.0144, step=87604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 97864   2007  73128 178444] values: [0.8492 0.29   0.7874 0.8849]
+Training:  45%|███████████████████████████████████████▌                                                | 22500/50000 [4:03:07<5:06:44,  1.49it/s, reward=0.903, eval_reward=1, qf_loss=0.0889, step=88804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 97929   2019  73191 183179] values: [0.8493 0.2897 0.7875 0.8855]
+Training:  46%|████████████████████████████████████████▌                                                | 22800/50000 [4:06:22<4:54:09,  1.54it/s, reward=0.906, eval_reward=1, qf_loss=0.0757, step=9e+4]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 97984   2032  73238 187937] values: [0.8493 0.2899 0.7876 0.8859]
+Training:  46%|████████████████████████████████████████▋                                               | 23100/50000 [4:09:34<4:52:39,  1.53it/s, reward=0.9, eval_reward=0.8, qf_loss=0.0207, step=91204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 98044   2052  73288 192658] values: [0.8494 0.2904 0.7876 0.8864]
+Training:  47%|█████████████████████████████████████████▏                                              | 23400/50000 [4:12:50<4:36:55,  1.60it/s, reward=0.903, eval_reward=1, qf_loss=0.0614, step=92404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 98113   2076  73338 197371] values: [0.8494 0.2929 0.7878 0.887 ]
+Training:  47%|█████████████████████████████████████████▋                                              | 23700/50000 [4:16:08<5:04:58,  1.44it/s, reward=0.909, eval_reward=1, qf_loss=0.0137, step=93604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 98180   2088  73400 202117] values: [0.8494 0.2926 0.7879 0.8875]
+Training:  48%|██████████████████████████████████████████▏                                             | 24000/50000 [4:19:20<4:21:05,  1.66it/s, reward=0.907, eval_reward=1, qf_loss=0.0263, step=94804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 98250   2108  73452 206915] values: [0.8495 0.2941 0.788  0.8881]
+Training:  49%|█████████████████████████████████████████▊                                            | 24300/50000 [4:22:34<4:32:34,  1.57it/s, reward=0.912, eval_reward=0.8, qf_loss=0.0303, step=96004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 98312   2132  73521 211643] values: [0.8494 0.2955 0.7881 0.8886]
+Training:  49%|██████████████████████████████████████████▎                                           | 24600/50000 [4:25:51<4:44:47,  1.49it/s, reward=0.907, eval_reward=0.2, qf_loss=0.0224, step=97204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 98373   2152  73569 216385] values: [0.8494 0.296  0.7882 0.8891]
+Training:  50%|███████████████████████████████████████████▊                                            | 24900/50000 [4:29:08<4:11:00,  1.67it/s, reward=0.908, eval_reward=1, qf_loss=0.0175, step=98404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 98442   2163  73625 221132] values: [0.8495 0.295  0.7883 0.8895]
+Training:  50%|███████████████████████████████████████████▊                                           | 25200/50000 [4:32:23<4:42:30,  1.46it/s, reward=0.91, eval_reward=0.8, qf_loss=0.0112, step=99604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 98501   2173  73695 225909] values: [0.8495 0.2959 0.7885 0.89  ]
+Training:  51%|████████████████████████████████████████████▉                                           | 25500/50000 [4:35:38<4:18:43,  1.58it/s, reward=0.912, eval_reward=1, qf_loss=0.163, step=100804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 98554   2190  73763 230677] values: [0.8496 0.2968 0.7886 0.8905]
+Training:  52%|███████████████████████████████████████████▊                                         | 25800/50000 [4:38:57<4:23:58,  1.53it/s, reward=0.912, eval_reward=0.8, qf_loss=0.0537, step=102004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 98620   2208  73825 235421] values: [0.8496 0.2976 0.7887 0.891 ]
+Training:  52%|████████████████████████████████████████████▎                                        | 26100/50000 [4:42:14<4:20:43,  1.53it/s, reward=0.915, eval_reward=0.8, qf_loss=0.0656, step=103204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 98687   2223  73893 240176] values: [0.8497 0.2991 0.7889 0.8915]
+Training:  53%|█████████████████████████████████████████████▉                                         | 26400/50000 [4:45:30<4:26:47,  1.47it/s, reward=0.911, eval_reward=1, qf_loss=0.0825, step=104404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 98756   2241  73940 244958] values: [0.8497 0.299  0.7889 0.892 ]
+Training:  53%|██████████████████████████████████████████████▍                                        | 26700/50000 [4:48:47<3:56:51,  1.64it/s, reward=0.918, eval_reward=1, qf_loss=0.0191, step=105604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 98812   2263  74001 249709] values: [0.8497 0.3014 0.789  0.8924]
+Training:  54%|█████████████████████████████████████████████▉                                       | 27000/50000 [4:52:02<4:26:07,  1.44it/s, reward=0.909, eval_reward=0.8, qf_loss=0.0603, step=106804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 98873   2283  74056 254459] values: [0.8498 0.3018 0.7891 0.8929]
+Training:  55%|██████████████████████████████████████████████▍                                      | 27300/50000 [4:55:16<3:52:28,  1.63it/s, reward=0.915, eval_reward=0.8, qf_loss=0.0219, step=108004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 98921   2302  74115 259227] values: [0.8498 0.3032 0.7893 0.8933]
+Training:  55%|██████████████████████████████████████████████▉                                      | 27600/50000 [4:58:32<4:10:53,  1.49it/s, reward=0.918, eval_reward=0.8, qf_loss=0.0513, step=109204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 98989   2318  74168 263966] values: [0.8498 0.3046 0.7894 0.8938]
+Training:  56%|████████████████████████████████████████████████▌                                      | 27900/50000 [5:01:46<4:08:30,  1.48it/s, reward=0.918, eval_reward=1, qf_loss=0.0265, step=110404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 99031   2336  74231 268729] values: [0.8499 0.3057 0.7895 0.8942]
+Training:  56%|███████████████████████████████████████████████▉                                     | 28200/50000 [5:05:00<3:30:07,  1.73it/s, reward=0.916, eval_reward=0.6, qf_loss=0.0234, step=111604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 99094   2355  74272 273491] values: [0.8499 0.3053 0.7896 0.8946]
+Training:  57%|█████████████████████████████████████████████████▌                                     | 28500/50000 [5:08:17<4:10:12,  1.43it/s, reward=0.914, eval_reward=1, qf_loss=0.0436, step=112804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 99133   2374  74327 278296] values: [0.85   0.3045 0.7897 0.895 ]
+Training:  58%|████████████████████████████████████████████████▉                                    | 28800/50000 [5:11:31<4:00:51,  1.47it/s, reward=0.918, eval_reward=0.8, qf_loss=0.0342, step=114004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 99194   2397  74380 283056] values: [0.85   0.3045 0.7898 0.8954]
+Training:  58%|██████████████████████████████████████████████████▋                                    | 29100/50000 [5:14:45<3:31:01,  1.65it/s, reward=0.915, eval_reward=1, qf_loss=0.0767, step=115204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 99244   2412  74463 287817] values: [0.8501 0.3064 0.7899 0.8958]
+Training:  59%|███████████████████████████████████████████████████▋                                    | 29400/50000 [5:17:58<3:51:54,  1.48it/s, reward=0.92, eval_reward=1, qf_loss=0.0372, step=116404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 99303   2424  74516 292631] values: [0.8502 0.3078 0.79   0.8964]
+Training:  59%|██████████████████████████████████████████████████▍                                  | 29700/50000 [5:21:12<3:22:42,  1.67it/s, reward=0.929, eval_reward=0.8, qf_loss=0.0408, step=117604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 99359   2442  74579 297384] values: [0.8502 0.3092 0.79   0.8967]
+Training:  60%|███████████████████████████████████████████████████▌                                  | 30000/50000 [5:24:28<3:44:37,  1.48it/s, reward=0.915, eval_reward=0.6, qf_loss=0.043, step=118804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 99417   2464  74637 302169] values: [0.8502 0.3117 0.7902 0.8972]
+Training:  61%|████████████████████████████████████████████████████▋                                  | 30300/50000 [5:27:42<3:19:45,  1.64it/s, reward=0.925, eval_reward=1, qf_loss=0.0137, step=120004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 99488   2484  74707 306949] values: [0.8503 0.3128 0.7903 0.8977]
+Training:  61%|████████████████████████████████████████████████████▋                                 | 30600/50000 [5:30:57<3:16:41,  1.64it/s, reward=0.928, eval_reward=1, qf_loss=0.00696, step=121204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 99552   2505  74759 311732] values: [0.8504 0.313  0.7904 0.8981]
+Training:  62%|████████████████████████████████████████████████████▌                                | 30900/50000 [5:34:14<3:28:33,  1.53it/s, reward=0.922, eval_reward=0.8, qf_loss=0.0194, step=122404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 99615   2515  74816 316521] values: [0.8504 0.3129 0.7905 0.8985]
+Training:  62%|██████████████████████████████████████████████████████▎                                | 31200/50000 [5:37:30<3:05:51,  1.69it/s, reward=0.921, eval_reward=1, qf_loss=0.0361, step=123604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 99689   2531  74883 321295] values: [0.8505 0.3145 0.7906 0.8989]
+Training:  63%|████████████████████████████████████████████████████▉                               | 31500/50000 [5:40:46<3:30:38,  1.46it/s, reward=0.926, eval_reward=0.6, qf_loss=0.00995, step=124804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 99773   2547  74938 326052] values: [0.8506 0.3145 0.7907 0.8992]
+Training:  64%|██████████████████████████████████████████████████████▋                               | 31800/50000 [5:43:59<3:09:23,  1.60it/s, reward=0.92, eval_reward=0.6, qf_loss=0.0532, step=126004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 99829   2566  75003 330839] values: [0.8506 0.3161 0.7908 0.8996]
+Training:  64%|███████████████████████████████████████████████████████▊                               | 32100/50000 [5:47:13<3:03:21,  1.63it/s, reward=0.925, eval_reward=1, qf_loss=0.0191, step=127204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 99889   2587  75058 335636] values: [0.8507 0.3162 0.791  0.8999]
+Training:  65%|███████████████████████████████████████████████████████                              | 32400/50000 [5:50:28<3:00:27,  1.63it/s, reward=0.918, eval_reward=0.6, qf_loss=0.0523, step=128404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [ 99950   2600  75101 340448] values: [0.8507 0.3158 0.791  0.9003]
+Training:  65%|███████████████████████████████████████████████████████▌                             | 32700/50000 [5:53:43<3:00:44,  1.60it/s, reward=0.926, eval_reward=0.6, qf_loss=0.0272, step=129604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [100005   2615  75171 345244] values: [0.8508 0.3166 0.7912 0.9007]
+Training:  66%|████████████████████████████████████████████████████████                             | 33000/50000 [5:56:58<2:56:23,  1.61it/s, reward=0.929, eval_reward=0.8, qf_loss=0.0207, step=130804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [100064   2623  75231 350068] values: [0.8508 0.3168 0.7913 0.9011]
+Training:  67%|█████████████████████████████████████████████████████████▎                            | 33300/50000 [6:00:13<3:09:43,  1.47it/s, reward=0.93, eval_reward=0.8, qf_loss=0.0254, step=132004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [100133   2642  75293 354887] values: [0.8509 0.3168 0.7915 0.9015]
+Training:  67%|█████████████████████████████████████████████████████████                            | 33600/50000 [6:03:26<2:48:44,  1.62it/s, reward=0.928, eval_reward=0.6, qf_loss=0.0179, step=133204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [100197   2657  75364 359699] values: [0.8509 0.3173 0.7916 0.9019]
+Training:  68%|█████████████████████████████████████████████████████████▋                           | 33900/50000 [6:06:41<3:05:52,  1.44it/s, reward=0.932, eval_reward=0.8, qf_loss=0.0388, step=134404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [100245   2679  75415 364521] values: [0.851  0.3188 0.7916 0.9023]
+Training:  68%|███████████████████████████████████████████████████████████▌                           | 34200/50000 [6:09:56<2:43:30,  1.61it/s, reward=0.929, eval_reward=1, qf_loss=0.0164, step=135604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [100319   2696  75469 369327] values: [0.851  0.319  0.7917 0.9028]
+Training:  69%|████████████████████████████████████████████████████████████                           | 34500/50000 [6:13:10<2:49:07,  1.53it/s, reward=0.933, eval_reward=1, qf_loss=0.0561, step=136804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [100392   2717  75524 374127] values: [0.8511 0.3206 0.7918 0.9032]
+Training:  70%|████████████████████████████████████████████████████████████▌                          | 34800/50000 [6:16:24<2:32:14,  1.66it/s, reward=0.931, eval_reward=1, qf_loss=0.0661, step=138004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [100454   2731  75585 378948] values: [0.8511 0.3204 0.7919 0.9036]
+Training:  70%|████████████████████████████████████████████████████████████▎                         | 35100/50000 [6:19:42<2:35:34,  1.60it/s, reward=0.932, eval_reward=1, qf_loss=0.00942, step=139204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [100527   2750  75660 383737] values: [0.8512 0.32   0.792  0.904 ]
+Training:  71%|████████████████████████████████████████████████████████████▏                        | 35400/50000 [6:22:59<2:47:43,  1.45it/s, reward=0.934, eval_reward=0.8, qf_loss=0.0265, step=140404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [100576   2768  75723 388572] values: [0.8512 0.3204 0.7922 0.9044]
+Training:  71%|██████████████████████████████████████████████████████████████▊                         | 35700/50000 [6:26:12<2:24:19,  1.65it/s, reward=0.934, eval_reward=1, qf_loss=0.071, step=141604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [100640   2784  75794 393385] values: [0.8513 0.3211 0.7923 0.9047]
+Training:  72%|██████████████████████████████████████████████████████████████▋                        | 36000/50000 [6:29:25<2:39:16,  1.46it/s, reward=0.933, eval_reward=1, qf_loss=0.0984, step=142804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [100695   2804  75861 398221] values: [0.8513 0.3228 0.7924 0.9051]
+Training:  73%|█████████████████████████████████████████████████████████████▋                       | 36300/50000 [6:32:42<2:28:24,  1.54it/s, reward=0.933, eval_reward=0.6, qf_loss=0.0841, step=144004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [100755   2817  75927 403044] values: [0.8514 0.322  0.7925 0.9055]
+Training:  73%|███████████████████████████████████████████████████████████████▋                       | 36600/50000 [6:35:57<2:12:33,  1.68it/s, reward=0.933, eval_reward=1, qf_loss=0.0242, step=145204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [100817   2843  75984 407877] values: [0.8514 0.324  0.7926 0.9058]
+Training:  74%|██████████████████████████████████████████████████████████████▋                      | 36900/50000 [6:39:11<2:29:21,  1.46it/s, reward=0.934, eval_reward=0.6, qf_loss=0.0641, step=146404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [100868   2856  76042 412740] values: [0.8515 0.3246 0.7927 0.9062]
+Training:  74%|████████████████████████████████████████████████████████████████▋                      | 37200/50000 [6:42:27<2:10:30,  1.63it/s, reward=0.933, eval_reward=1, qf_loss=0.0121, step=147604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [100927   2872  76089 417589] values: [0.8515 0.3256 0.7928 0.9066]
+Training:  75%|█████████████████████████████████████████████████████████████████▎                     | 37500/50000 [6:45:42<2:24:16,  1.44it/s, reward=0.939, eval_reward=1, qf_loss=0.0156, step=148804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [100992   2890  76144 422414] values: [0.8516 0.3263 0.793  0.9069]
+Training:  76%|█████████████████████████████████████████████████████████████████▊                     | 37800/50000 [6:48:58<2:13:18,  1.53it/s, reward=0.938, eval_reward=1, qf_loss=0.0467, step=150004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [101055   2904  76206 427260] values: [0.8517 0.3264 0.7931 0.9073]
+Training:  76%|██████████████████████████████████████████████████████████████████▎                    | 38100/50000 [6:52:12<2:00:59,  1.64it/s, reward=0.938, eval_reward=1, qf_loss=0.0726, step=151204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [101112   2918  76284 432112] values: [0.8517 0.3283 0.7932 0.9077]
+Training:  77%|████████████████████████████████████████████████████████████████▌                   | 38400/50000 [6:55:25<2:08:26,  1.51it/s, reward=0.938, eval_reward=0.8, qf_loss=0.00804, step=152404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [101160   2932  76355 436961] values: [0.8517 0.3284 0.7933 0.908 ]
+Training:  77%|█████████████████████████████████████████████████████████████████▊                   | 38700/50000 [6:58:39<2:01:47,  1.55it/s, reward=0.939, eval_reward=0.8, qf_loss=0.0173, step=153604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [101222   2948  76421 441807] values: [0.8518 0.3301 0.7934 0.9084]
+Training:  78%|██████████████████████████████████████████████████████████████████▎                  | 39000/50000 [7:01:53<1:55:45,  1.58it/s, reward=0.939, eval_reward=0.8, qf_loss=0.0318, step=154804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [101284   2968  76491 446638] values: [0.8519 0.3302 0.7935 0.9087]
+Training:  79%|██████████████████████████████████████████████████████████████████▊                  | 39300/50000 [7:05:09<1:57:32,  1.52it/s, reward=0.934, eval_reward=0.8, qf_loss=0.0416, step=156004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [101344   2991  76556 451483] values: [0.8519 0.3303 0.7937 0.9091]
+Training:  79%|███████████████████████████████████████████████████████████████████▎                 | 39600/50000 [7:08:23<1:49:10,  1.59it/s, reward=0.943, eval_reward=0.8, qf_loss=0.0159, step=157204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [101416   3010  76615 456317] values: [0.852  0.3316 0.7939 0.9094]
+Training:  80%|███████████████████████████████████████████████████████████████████                 | 39900/50000 [7:11:38<1:45:48,  1.59it/s, reward=0.939, eval_reward=0.8, qf_loss=0.00737, step=158404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [101473   3025  76677 461173] values: [0.852  0.3316 0.794  0.9098]
+Training:  80%|█████████████████████████████████████████████████████████████████████▉                 | 40200/50000 [7:14:53<1:39:09,  1.65it/s, reward=0.941, eval_reward=1, qf_loss=0.0156, step=159604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [101533   3041  76739 466030] values: [0.8521 0.3318 0.7941 0.9101]
+Training:  81%|███████████████████████████████████████████████████████████████████████▎                | 40500/50000 [7:18:06<1:41:01,  1.57it/s, reward=0.94, eval_reward=1, qf_loss=0.0173, step=160804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [101589   3057  76806 470871] values: [0.8521 0.3314 0.7942 0.9105]
+Training:  82%|██████████████████████████████████████████████████████████████████████▉                | 40800/50000 [7:21:21<1:31:28,  1.68it/s, reward=0.943, eval_reward=1, qf_loss=0.0308, step=162004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [101653   3073  76861 475736] values: [0.8522 0.3332 0.7944 0.9108]
+Training:  82%|███████████████████████████████████████████████████████████████████████▌               | 41100/50000 [7:24:36<1:43:09,  1.44it/s, reward=0.943, eval_reward=1, qf_loss=0.0494, step=163204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [101720   3096  76918 480571] values: [0.8522 0.334  0.7945 0.9112]
+Training:  83%|████████████████████████████████████████████████████████████████████████               | 41400/50000 [7:27:52<1:37:19,  1.47it/s, reward=0.944, eval_reward=1, qf_loss=0.0155, step=164404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [101783   3112  76981 485417] values: [0.8523 0.3352 0.7946 0.9115]
+Training:  83%|████████████████████████████████████████████████████████████████████████▌              | 41700/50000 [7:31:06<1:26:05,  1.61it/s, reward=0.943, eval_reward=1, qf_loss=0.0625, step=165604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [101851   3133  77041 490274] values: [0.8523 0.3358 0.7947 0.9118]
+Training:  84%|█████████████████████████████████████████████████████████████████████████              | 42000/50000 [7:34:23<1:29:16,  1.49it/s, reward=0.942, eval_reward=1, qf_loss=0.0124, step=166804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [101927   3148  77087 495157] values: [0.8524 0.3364 0.7948 0.9121]
+Training:  85%|█████████████████████████████████████████████████████████████████████████▌             | 42300/50000 [7:37:38<1:16:17,  1.68it/s, reward=0.943, eval_reward=1, qf_loss=0.0205, step=168004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [101991   3162  77143 500029] values: [0.8524 0.3378 0.7949 0.9125]
+Training:  85%|██████████████████████████████████████████████████████████████████████████             | 42600/50000 [7:40:52<1:21:31,  1.51it/s, reward=0.946, eval_reward=1, qf_loss=0.0196, step=169204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [102054   3178  77191 504877] values: [0.8525 0.337  0.795  0.9128]
+Training:  86%|████████████████████████████████████████████████████████████████████████▉            | 42900/50000 [7:44:08<1:16:08,  1.55it/s, reward=0.941, eval_reward=0.8, qf_loss=0.0295, step=170404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [102121   3197  77243 509720] values: [0.8526 0.3384 0.7951 0.9131]
+Training:  86%|██████████████████████████████████████████████████████████████████████████▎           | 43200/50000 [7:47:23<1:13:26,  1.54it/s, reward=0.941, eval_reward=1, qf_loss=0.00394, step=171604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [102185   3221  77319 514541] values: [0.8527 0.3381 0.7953 0.9133]
+Training:  87%|█████████████████████████████████████████████████████████████████████████▉           | 43500/50000 [7:50:39<1:12:01,  1.50it/s, reward=0.941, eval_reward=0.8, qf_loss=0.0239, step=172804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [102251   3240  77377 519430] values: [0.8527 0.3383 0.7954 0.9137]
+Training:  88%|█████████████████████████████████████████████████████████████████████████▌          | 43800/50000 [7:53:53<1:05:39,  1.57it/s, reward=0.948, eval_reward=0.8, qf_loss=0.00555, step=174004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [102320   3259  77440 524271] values: [0.8528 0.3394 0.7955 0.914 ]
+Training:  88%|██████████████████████████████████████████████████████████████████████████          | 44100/50000 [7:57:09<1:04:41,  1.52it/s, reward=0.942, eval_reward=0.8, qf_loss=0.00891, step=175204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [102374   3273  77501 529170] values: [0.8528 0.3394 0.7957 0.9143]
+Training:  89%|██████████████████████████████████████████████████████████████████████████████▏         | 44400/50000 [8:00:24<57:50,  1.61it/s, reward=0.95, eval_reward=0.8, qf_loss=0.0103, step=176404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [102428   3290  77556 534050] values: [0.8529 0.3389 0.7958 0.9147]
+Training:  89%|███████████████████████████████████████████████████████████████████████████████▌         | 44700/50000 [8:03:38<57:57,  1.52it/s, reward=0.949, eval_reward=1, qf_loss=0.0368, step=177604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [102487   3308  77609 538928] values: [0.8529 0.3389 0.7959 0.915 ]
+Training:  90%|████████████████████████████████████████████████████████████████████████████████         | 45000/50000 [8:06:51<51:26,  1.62it/s, reward=0.948, eval_reward=1, qf_loss=0.0162, step=178804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [102540   3334  77678 543806] values: [0.853  0.3401 0.796  0.9152]
+Training:  91%|███████████████████████████████████████████████████████████████████████████████▋        | 45300/50000 [8:10:07<54:11,  1.45it/s, reward=0.942, eval_reward=0.8, qf_loss=0.036, step=180004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [102600   3350  77747 548690] values: [0.853  0.3412 0.7962 0.9156]
+Training:  91%|██████████████████████████████████████████████████████████████████████████████▍       | 45600/50000 [8:13:22<47:19,  1.55it/s, reward=0.956, eval_reward=0.8, qf_loss=0.00936, step=181204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [102663   3370  77797 553556] values: [0.8531 0.3424 0.7963 0.9159]
+Training:  92%|███████████████████████████████████████████████████████████████████████████████▊       | 45900/50000 [8:16:35<42:08,  1.62it/s, reward=0.948, eval_reward=0.8, qf_loss=0.0138, step=182404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [102740   3380  77875 558396] values: [0.8532 0.342  0.7964 0.9162]
+Training:  92%|████████████████████████████████████████████████████████████████████████████████▍      | 46200/50000 [8:19:47<40:22,  1.57it/s, reward=0.949, eval_reward=0.8, qf_loss=0.0276, step=183604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [102806   3386  77950 563275] values: [0.8533 0.3429 0.7966 0.9165]
+Training:  93%|████████████████████████████████████████████████████████████████████████████████▉      | 46500/50000 [8:23:01<36:34,  1.59it/s, reward=0.953, eval_reward=0.8, qf_loss=0.0109, step=184804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [102865   3407  78006 568177] values: [0.8533 0.3443 0.7967 0.9169]
+Training:  94%|██████████████████████████████████████████████████████████████████████████████████▎     | 46800/50000 [8:26:17<33:59,  1.57it/s, reward=0.957, eval_reward=1, qf_loss=0.00989, step=186004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [102945   3413  78068 573048] values: [0.8534 0.3446 0.7968 0.9172]
+Training:  94%|███████████████████████████████████████████████████████████████████████████████████▊     | 47100/50000 [8:29:30<28:42,  1.68it/s, reward=0.951, eval_reward=1, qf_loss=0.0105, step=187204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [103011   3426  78124 577902] values: [0.8535 0.345  0.7969 0.9175]
+Training:  95%|████████████████████████████████████████████████████████████████████████████████████▎    | 47400/50000 [8:32:44<30:11,  1.44it/s, reward=0.949, eval_reward=1, qf_loss=0.0271, step=188404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [103070   3437  78187 582780] values: [0.8535 0.3454 0.7971 0.9178]
+Training:  95%|████████████████████████████████████████████████████████████████████████████████████▉    | 47700/50000 [8:36:01<26:08,  1.47it/s, reward=0.955, eval_reward=1, qf_loss=0.0131, step=189604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [103132   3453  78238 587657] values: [0.8536 0.3452 0.7972 0.918 ]
+Training:  96%|██████████████████████████████████████████████████████████████████████████████████▌   | 48000/50000 [8:39:15<20:38,  1.62it/s, reward=0.947, eval_reward=0.8, qf_loss=0.00976, step=190804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [103197   3470  78305 592509] values: [0.8536 0.3467 0.7973 0.9183]
+Training:  97%|████████████████████████████████████████████████████████████████████████████████████   | 48300/50000 [8:42:29<18:38,  1.52it/s, reward=0.947, eval_reward=0.8, qf_loss=0.0591, step=192004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [103254   3488  78379 597370] values: [0.8537 0.3486 0.7974 0.9185]
+Training:  97%|███████████████████████████████████████████████████████████████████████████████████████▍  | 48600/50000 [8:45:46<14:18,  1.63it/s, reward=0.95, eval_reward=1, qf_loss=0.0097, step=193204]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [103316   3513  78447 602242] values: [0.8538 0.3513 0.7976 0.9188]
+Training:  98%|█████████████████████████████████████████████████████████████████████████████████████  | 48900/50000 [8:49:01<12:17,  1.49it/s, reward=0.954, eval_reward=0.8, qf_loss=0.0132, step=194404]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [103379   3529  78509 607134] values: [0.8538 0.3517 0.7977 0.9191]
+Training:  98%|█████████████████████████████████████████████████████████████████████████████████████▌ | 49200/50000 [8:52:16<08:15,  1.62it/s, reward=0.953, eval_reward=0.8, qf_loss=0.0417, step=195604]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [103437   3548  78581 612027] values: [0.8539 0.3529 0.7979 0.9194]
+Training:  99%|██████████████████████████████████████████████████████████████████████████████████████▏| 49500/50000 [8:55:31<05:16,  1.58it/s, reward=0.951, eval_reward=0.6, qf_loss=0.0545, step=196804]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [103499   3567  78645 616921] values: [0.854  0.353  0.798  0.9197]
+Training: 100%|██████████████████████████████████████████████████████████████████████████████████████▋| 49800/50000 [8:58:46<02:13,  1.50it/s, reward=0.95, eval_reward=0.6, qf_loss=0.00719, step=198004]eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
+[bandit] counts: [103550   3584  78708 621808] values: [0.854  0.3538 0.7981 0.9199]
+Training: 100%|███████████████████████████████████████████████████████████████████████████████████████| 50000/50000 [9:00:56<00:00,  1.54it/s, reward=0.952, eval_reward=0.8, qf_loss=0.0162, step=199204]
+eval prog: 1/5eval prog: 2/5eval prog: 3/5eval prog: 4/5eval prog: 5/5
