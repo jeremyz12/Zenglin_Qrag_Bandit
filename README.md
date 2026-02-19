@@ -30,8 +30,6 @@
 - **Arm 2 — first256**：仅保留前 256 条候选证据（prefix truncation）
 - **Arm 3 — first1024**：仅保留前 1024 条候选证据（prefix truncation）
 
-> 注：上述 “firstK” 的有效性依赖候选证据的排序机制（例如检索分数排序或原始拼接顺序）。
-
 ### 2.3 选择与更新规则（UCB1 + ε-greedy）
 Bandit 采用 **UCB1（Upper Confidence Bound）** 作为主选择规则，并引入 **ε-greedy** 进行小概率随机探索。
 
@@ -51,27 +49,18 @@ t：总选择次数（total pulls）
 
 3. 代码改动摘要（Code Changes）
 3.1 新增文件
-
-bandit.py
-实现一个轻量的 Bandit controller，包括：
-
-UCB1 分数计算
-
-ε-greedy 探索
-
-arm 统计量维护（均值/计数）
-
-基于 mask 的证据筛选策略接口
+  bandit.py
+    实现一个轻量的 Bandit controller，包括：
+   - UCB1 分数计算
+   - ε-greedy 探索
+   - arm 统计量维护（均值/计数）
+   - 基于 mask 的证据筛选策略接口
 
 3.2 集成点（Integration Points）
 
 在检索后 / 上下文构造阶段接入 Bandit：
-
-选择 arm → 生成 mask → 筛选候选证据 → 构造最终上下文
-
-episode 结束后使用回报更新所选 arm 的统计量（incremental update）
-
-说明：以上为功能级集成描述；具体调用位置与数据流以仓库内实现为准。
+  选择 arm → 生成 mask → 筛选候选证据 → 构造最终上下文
+  episode 结束后使用回报更新所选 arm 的统计量（incremental update）
 
 4. 结果：HotpotQA 准确度对比（Results）
 
@@ -79,25 +68,20 @@ episode 结束后使用回报更新所选 arm 的统计量（incremental update�
 
 4.1 Baseline（Q-RAG）
 
-EM = 0.754
-
-F1 = 0.814
-
-Mean return = 0.754 ± 0.431 (std)
+  EM = 0.754
+  F1 = 0.814
+  Mean return = 0.754 ± 0.431 (std)
 
 4.2 Q-RAG + Bandit（UCB）
 
-EM = 0.796
-
-F1 = 0.847
-
-Mean return = 0.796 ± 0.403 (std)
+  EM = 0.796
+  F1 = 0.847
+  Mean return = 0.796 ± 0.403 (std)
 
 4.3 增益（Absolute / Relative Gain）
 
-EM: +0.042（0.754 → 0.796），相对提升 +5.57%
-
-F1: +0.033（0.814 → 0.847），相对提升 +4.05%
+  EM: +0.042（0.754 → 0.796），相对提升 +5.57%
+  F1: +0.033（0.814 → 0.847），相对提升 +4.05%
 
 5. 复现实验（Reproducibility）
 
@@ -117,12 +101,10 @@ python .\eval_retriever.py `
 
 6. 后续工作（Planned Work）
 
-跨数据集评测（Generalization）
-将同一 Bandit 机制扩展到其他数据集（例如 README 中提到的 Babilong / Musique 等），在一致的评测协议下报告指标变化。
-
-单一策略消融（Ablation: Arm 3 only）
-进行仅启用 Arm 3（first1024） 的对照实验，以区分以下两类贡献来源：
-
-“Bandit 自适应选择”带来的收益
-
-“固定 first1024 截断策略”本身带来的收益
+  跨数据集评测（Generalization）
+  将同一 Bandit 机制扩展到其他数据集（例如 README 中提到的 Babilong / Musique 等），在一致的评测协议下报告指标变化。
+  
+  单一策略消融（Ablation: Arm 3 only）
+  进行仅启用 Arm 3（first1024） 的对照实验，以区分以下两类贡献来源：
+    “Bandit 自适应选择”带来的收益
+    “固定 first1024 截断策略”本身带来的收益
