@@ -47,6 +47,8 @@ t：总选择次数（total pulls）
 
 探索机制（ε-greedy）：以概率 epsilon 随机选 arm；以概率 1-epsilon 选取 UCB 最大的 arm。
 
+---
+
 ## 3. 代码改动摘要（Code Changes）
 ### 3.1 新增文件
   bandit.py
@@ -61,6 +63,8 @@ t：总选择次数（total pulls）
 在检索后 / 上下文构造阶段接入 Bandit：
   选择 arm → 生成 mask → 筛选候选证据 → 构造最终上下文
   episode 结束后使用回报更新所选 arm 的统计量（incremental update）
+
+---
 
 ## 4. 结果：HotpotQA 准确度对比（Results）
 
@@ -81,6 +85,8 @@ t：总选择次数（total pulls）
   EM: +0.042（0.754 → 0.796），相对提升 +5.57%
   F1: +0.033（0.814 → 0.847），相对提升 +4.05%
 
+---
+
 ## 5. 复现实验（Reproducibility）
 
 示例评测命令（PowerShell）：
@@ -96,6 +102,8 @@ python .\eval_retriever.py `
   num_samples=-1 `
   seed=42 `
   +envs.max_steps=3
+
+---
 
 ## 6. 后续工作（Planned Work）
 
