@@ -48,7 +48,7 @@ t：总选择次数（total pulls）
 探索机制（ε-greedy）：以概率 epsilon 随机选 arm；以概率 1-epsilon 选取 UCB 最大的 arm。
 
 ## 3. 代码改动摘要（Code Changes）
-###3.1 新增文件
+### 3.1 新增文件
   bandit.py
     实现一个轻量的 Bandit controller，包括：
    - UCB1 分数计算
@@ -56,32 +56,32 @@ t：总选择次数（total pulls）
    - arm 统计量维护（均值/计数）
    - 基于 mask 的证据筛选策略接口
 
-###3.2 集成点（Integration Points）
+### 3.2 集成点（Integration Points）
 
 在检索后 / 上下文构造阶段接入 Bandit：
   选择 arm → 生成 mask → 筛选候选证据 → 构造最终上下文
   episode 结束后使用回报更新所选 arm 的统计量（incremental update）
 
-##4. 结果：HotpotQA 准确度对比（Results）
+## 4. 结果：HotpotQA 准确度对比（Results）
 
 使用 eval_retriever.py 在相同评测设置下进行对比：
 
-###4.1 Baseline（Q-RAG）
+### 4.1 Baseline（Q-RAG）
   EM = 0.754
   F1 = 0.814
   Mean return = 0.754 ± 0.431 (std)
 
-###4.2 Q-RAG + Bandit（UCB）
+### 4.2 Q-RAG + Bandit（UCB）
   EM = 0.796
   F1 = 0.847
   Mean return = 0.796 ± 0.403 (std)
 
-###4.3 增益（Absolute / Relative Gain）
+### 4.3 增益（Absolute / Relative Gain）
 
   EM: +0.042（0.754 → 0.796），相对提升 +5.57%
   F1: +0.033（0.814 → 0.847），相对提升 +4.05%
 
-##5. 复现实验（Reproducibility）
+## 5. 复现实验（Reproducibility）
 
 示例评测命令（PowerShell）：
 
@@ -97,7 +97,7 @@ python .\eval_retriever.py `
   seed=42 `
   +envs.max_steps=3
 
-##6. 后续工作（Planned Work）
+## 6. 后续工作（Planned Work）
 
   跨数据集评测（Generalization）
   将同一 Bandit 机制扩展到其他数据集（例如 README 中提到的 Babilong / Musique 等），在一致的评测协议下报告指标变化。
