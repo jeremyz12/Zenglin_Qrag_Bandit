@@ -69,9 +69,9 @@ Bandit 使用 **UCB1 (Upper Confidence Bound)** 作为主选择规则，并结�
 使用 eval_retriever.py 在相同评测设置下进行对比：
 
 ### 4.1 Baseline（Q-RAG）
-EM = 0.754
-F1 = 0.814
-Mean return = 0.754 ± 0.431 (std)
+ - EM = 0.754
+ - F1 = 0.814
+ - Mean return = 0.754 ± 0.431 (std)
 
 ### 4.2 Q-RAG + Bandit（UCB）
 EM = 0.796
