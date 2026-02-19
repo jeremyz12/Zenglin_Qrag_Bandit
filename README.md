@@ -43,21 +43,22 @@ Bandit 的目标是最大化最终 reward（例如 EM/F1 对应的 episode retur
 
 ## 4. Bandit 的学习方式：UCB1 + ε-greedy（不是 Q-learning）
 
-你现在的 bandit 是典型的 **context-free bandit**（无状态老虎机）范式：
+### 选择规则（简化描述）
 
-- **不是 Q-learning / Q-table / TD** 那套（没有 state->action 的 Q(s,a)）
-- 只维护每个 arm 的：
-  - `counts[a]`: 被选次数  
-  - `values[a]`: 平均回报（mean reward）
+- **初始化阶段**：先确保每个 arm 至少被选择一次（避免分母为 0，也为后续估计均值提供初始样本）。
+- **之后每一步**：对每个 arm 计算 UCB 分数，并选择分数最大的 arm。
 
-选择规则（简化描述）：
-- 先确保每个 arm 至少被试一次
-- 之后用：
-  \[
-  \text{UCB}(a)=\hat{\mu}_a + \sqrt{\frac{2\ln t}{n_a}}
-  \]
-  其中 \(\hat{\mu}_a\) 是该 arm 的平均 reward，\(n_a\) 是选择次数，\(t\) 是总步数  
-- 以 `epsilon` 小概率随机选 arm 做探索
+$$
+\mathrm{UCB}(a)=\hat{\mu}_a + \sqrt{\frac{2\ln t}{n_a}}
+$$
+
+其中：
+- \( \hat{\mu}_a \)：arm \(a\) 的历史平均回报（mean reward）
+- \( n_a \)：arm \(a\) 被选择的次数
+- \( t \)：到当前为止的总选择次数（总步数）
+
+- **探索（exploration）**：以 \( \epsilon \) 的小概率随机选择一个 arm（\(\epsilon\)-greedy），其余 \(1-\epsilon\) 概率按 UCB 最大值选择（利用 / exploitation）。
+
 
 ---
 
